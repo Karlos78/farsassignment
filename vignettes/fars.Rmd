@@ -33,15 +33,9 @@ fars_read() takes a *filename* as input and outputs a dataframe.
 
 make_filename() takes a year as input and uses this to generate a filename.
 
-```{r}
-source("fars_functions.R")
-make_filename(2016)
-```
-
 ###fars_read_years()
 
 Takes a vector of years as input and outputs a dataframe containing unique combinations of year and month values.
-
 
 ## Analysis functions
 
