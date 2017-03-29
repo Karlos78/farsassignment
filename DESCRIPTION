@@ -3,7 +3,7 @@ Type: Package
 Title: Functions For Analysing Fatality Data
 Version: 0.1.0
 Author: Karl
-Maintainer: Karl
+Maintainer: person("Karl", "M",,"karl@email.com", role = c("aut", "cre"))
 Description: This package provides a set of functions for reading, analysing and visualising
     fatality data from the NHTSA.
 License: No license
