@@ -1,58 +1,55 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Building R Packages - Assignment"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Building R Packages - Assignment}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+This vignette provides details about a set of functions created to analyse, tabulate and visualise fatality data from the NHTSA.
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+Three functions are *helper* functions which will not be visable to the end user in the final version of this package:
 
-## Vignette Info
+- fars_read()
+- make_filename()
+- fars_read_years()
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+Two further functions allow a user to tabulate and visualise fatality data on a map:
 
-## Styles
+- fars_summarize_years()
+- fars_map_state()
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+For more details on each function use ?function()
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
+## Helper functions
 
-## Figures
+###fars_read()
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+fars_read() takes a *filename* as input and outputs a dataframe.
 
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+###make_filename()
+
+make_filename() takes a year as input and uses this to generate a filename.
+
+```{r include = TRUE}
+source("fars_functions.R")
+make_filename(2016)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+###fars_read_years()
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+Takes a vector of years as input and outputs a dataframe containing unique combinations of year and month values.
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
 
-## More Examples
+## Analysis functions
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+###fars_summarize_years()
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
+Takes a vector of years as input and generates a table of counts of fatalities by month, for each year.
 
-Also a quote using `>`:
+###fars_map_state()
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+Takes a state number and year as input and generates a map of fatalities for the chosen parameters.
+
