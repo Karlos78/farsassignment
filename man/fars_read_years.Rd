@@ -23,9 +23,11 @@ This function has dependencies on \code{\link[dplyr]{mutate}} and \code{\link[dp
 If the user supplies a year for which no data exists then this function returns an error.
 }
 \examples{
+ \dontrun{
   fars_read_years(c(2013,2014,2015))
 
   yrs <- c(2013,2014,2015)
   fars_read_years(yrs)
+}
 
 }

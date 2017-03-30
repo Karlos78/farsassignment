@@ -22,7 +22,9 @@ This function has dependencies on \code{\link[readr]{read_csv}} and \code{\link[
 If the filename supplied does not exist in the user's working direcrtory then this funtion returns an error.
 }
 \examples{
+ \dontrun{
   fars_read(newfile.txt)
   fars_read(oldfile.csv)
+}
 
 }

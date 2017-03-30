@@ -13,8 +13,8 @@
 #' @note This function has dependencies on \code{\link[readr]{read_csv}} and \code{\link[dplyr]{tbl_df}}
 #' @note If the filename supplied does not exist in the user's working direcrtory then this funtion returns an error.
 #'
-#' \dontrun{
 #' @examples
+#'  \dontrun{
 #'   fars_read(newfile.txt)
 #'   fars_read(oldfile.csv)
 #' }
@@ -40,8 +40,8 @@ fars_read <- function(filename) {
 #'
 #' @note If the user does not supply an input which can be treated as an integer then this function returns an error.
 #'
-#' \dontrun{
 #' @examples
+#'  \dontrun{
 #'   make_filename(2015)
 #'   make_filename(2016)
 #' }
@@ -68,8 +68,8 @@ make_filename <- function(year) {
 #' @note This function has dependencies on \code{\link[dplyr]{mutate}} and \code{\link[dplyr]{select}}
 #' @note If the user supplies a year for which no data exists then this function returns an error.
 #'
-#' \dontrun{
 #' @examples
+#'  \dontrun{
 #'   fars_read_years(c(2013,2014,2015))
 #'
 #'   yrs <- c(2013,2014,2015)
@@ -106,8 +106,8 @@ fars_read_years <- function(years) {
 #' @note This function has dependencies on \code{\link[dplyr]{bind_rows}}, \code{\link[dplyr]{group_by}}, \code{\link[dplyr]{summarize}} and \code{\link[tidyr]{spread}}
 #' @note This function will return an error if the user provides a year for which data does not exist as input.
 #'
-#' \dontrun{
 #' @examples
+#'  \dontrun{
 #'   df <- fars_summarize_years(c(2013,2014,2015))
 #'
 #'   yrs <- c(2013,2014,2015)
@@ -142,8 +142,8 @@ fars_summarize_years <- function(years) {
 #' @note This function has dependencies on \code{\link[maps]{map}} and \code{\link[graphics]{points}}
 #' @note This function will return an error if an invalid state code is provided as input.
 #'
-#' \dontrun{
 #' @examples
+#'  \dontrun{
 #'   fars_map_state(1,2014)
 #'   fars_map_state(12,2015)
 #' }

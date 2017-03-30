@@ -19,7 +19,9 @@ This function creates a filename based on a year (\code{year}) input by the user
 If the user does not supply an input which can be treated as an integer then this function returns an error.
 }
 \examples{
+ \dontrun{
   make_filename(2015)
   make_filename(2016)
+}
 
 }

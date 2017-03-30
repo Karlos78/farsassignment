@@ -24,7 +24,9 @@ This function has dependencies on \code{\link[maps]{map}} and \code{\link[graphi
 This function will return an error if an invalid state code is provided as input.
 }
 \examples{
+ \dontrun{
   fars_map_state(1,2014)
   fars_map_state(12,2015)
+}
 
 }

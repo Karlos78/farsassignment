@@ -25,9 +25,11 @@ This function has dependencies on \code{\link[dplyr]{bind_rows}}, \code{\link[dp
 This function will return an error if the user provides a year for which data does not exist as input.
 }
 \examples{
+ \dontrun{
   df <- fars_summarize_years(c(2013,2014,2015))
 
   yrs <- c(2013,2014,2015)
   fars_summarize_years(yrs)
+}
 
 }
